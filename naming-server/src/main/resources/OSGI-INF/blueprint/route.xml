@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+ 	<bean id="helloService" class="nl.dovetail.esb.naming.HelloBeanImpl" />
+    <service ref="helloService" interface="nl.dovetail.esb.naming.HelloBean" />
+    	
+	<bean id="myRoute" class="nl.dovetail.esb.naming.MyRoute"/>
+	
+	<camelContext xmlns="http://camel.apache.org/schema/blueprint">
+		<routeBuilder ref="myRoute"/>	
+	</camelContext>
+
+</blueprint>
